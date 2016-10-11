@@ -893,7 +893,7 @@ nav.sidebar-nav .container { vertical-align: top; padding:60px 40px }
 /* ====================================
    about us
 ======================================*/
-.Abt_BgImg{background: url(../../assets/img/content_big_02.jpg);height: 598px;background-size: cover;background-repeat: no-repeat;}
+.Abt_BgImg{background: url(image-path('content_big_02.jpg'));height: 598px;background-size: cover;background-repeat: no-repeat;}
 .relative_position{position: relative;;}
 
 .counter-style1 .counter-number { font-size: 35px;}
@@ -966,7 +966,7 @@ ul.portfolio-filter-tab-style-6 { margin: 220px 50px 0 0;}
 .grid { margin: 0 auto; }
 .grid li { box-sizing: border-box; float: left; margin: 0; display: inline-table;  }
 .gallery-img { opacity: 1; transition: all 0.3s ease 0s; overflow: hidden; }
-.grid figure:hover img { -ms-transform: scale(1.1,1.1); -webkit-transform: scale(1.1,1.1);  transform: scale(1.1,1.1); transition: all .3s ease; -webkit-transition: all .3s ease; -moz-transition: all .3s ease; opacity:0.15; cursor:url("../img/icon-zoom.png"), pointer;  }
+.grid figure:hover img { -ms-transform: scale(1.1,1.1); -webkit-transform: scale(1.1,1.1);  transform: scale(1.1,1.1); transition: all .3s ease; -webkit-transition: all .3s ease; -moz-transition: all .3s ease; opacity:0.15; cursor: url(image-path("icon-zoom.png")), pointer;  }
 .grid figure:hover figcaption { opacity: 1; transition: all .3s ease; -webkit-transition: all .3s ease; -moz-transition: all .3s ease;}
 
 /* grid - style 1 */
@@ -1438,7 +1438,7 @@ input.no-border, input.no-border:focus, select.no-border, select.no-border:focus
 
 footer { clear:both;}
 footer img {max-width: 156px;}
-.footer-bottom {padding: 30px 0; background-color: #313131; background-image: url(asset-path("bg/footer_bg_white.png"));background-repeat: repeat-x;background-position: 0px -49px;height: 150px;}
+.footer-bottom {padding: 30px 0; background-color: #313131; background-image: url(image-path("bg/footer_bg_white.png"));background-repeat: repeat-x;background-position: 0px -49px;height: 150px;}
 .footer-top {padding: 60px 0;background-color: #313131;}
 .footer-social i {  font-size: 22px;}
 .footer-social a { margin: 0 25px; display: inline-block;}
@@ -1562,7 +1562,7 @@ footer img {max-width: 156px;}
 .hover-box-image-link {opacity: 0; left: 0; right: 0; bottom: 60px; }
 .hover-box-image:hover  .hover-box-image-link {opacity: 1; -webkit-transform: translateY(-40px); -ms-transform: translateY(-40px); transform: translateY(-40px);}
 .line-link {padding: 0 10px; z-index: 1}
-.line-link:before{ background: url('../images/link-line.png') center 12px no-repeat; content: "arrow"; text-indent: -9999px; width: 100%; position: absolute; z-index: -1; left: 0}
+.line-link:before{ background: url(image-path('bg/link-line.png')) center 12px no-repeat; content: "arrow"; text-indent: -9999px; width: 100%; position: absolute; z-index: -1; left: 0}
 .line-link:hover {padding: 0 25px; z-index: 1;}
 .hover-box-image:hover .line-link { letter-spacing: 3px}
 .photography-awards {min-height: 830px}
@@ -1573,7 +1573,7 @@ footer img {max-width: 156px;}
 /* ===================================
     Services added by : Anil;
 ====================================== */
-.Servc_BG{    background: url(/assets/img/parallax-img1.jpg);background-attachment: fixed;background-position: center;background-repeat: no-repeat; background-size: cover;padding: 4% 0;}
+.Servc_BG{    background: url(image-path('bg/parallax.jpg'));background-attachment: fixed;background-position: center;background-repeat: no-repeat; background-size: cover;padding: 4% 0;}
 
 
 
