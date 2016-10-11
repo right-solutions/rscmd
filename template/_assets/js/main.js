@@ -1,0 +1,21 @@
+//= require vendor/jquery.min.js
+//= require vendor/modernizr.js
+//= require vendor/bootstrap.min.js
+//= require vendor/jquery.easing.1.3.js
+//= require vendor/skrollr.min.js
+//= require vendor/smooth-scroll.js
+//= require vendor/jquery.appear.js
+//= require vendor/jquery.nav.js
+//= require vendor/wow.min.js
+//= require vendor/page-scroll.js
+//= require vendor/owl.carousel.min.js
+//= require vendor/jquery.countTo.js
+//= require vendor/jquery.parallax-1.1.3.js
+//= require vendor/jquery.magnific-popup.min.js
+//= require vendor/isotope.pkgd.min.js
+//= require vendor/imagesloaded.pkgd.min.js
+//= require vendor/classie.js
+//= require vendor/counter.js
+//= require vendor/jquery.fitvids.js
+
+//= require app.js

@@ -1,0 +1,17 @@
+gallery:
+  - /assets/img/gallery/GI0001.jpg
+  - /assets/img/gallery/GI0002.jpg
+  - /assets/img/gallery/GI0003.jpg
+sliders:
+  - /assets/img/sliders/SL0001.jpg
+  - /assets/img/sliders/SL0002.jpg
+  - /assets/img/sliders/SL0003.jpg
+backgrounds:
+  reservation: /assets/img/backgrounds/reservation.jpg
+  footer: /assets/img/backgrounds/footer.jpg
+banners:
+  about_us: /assets/img/backgrounds/about_us.jpg
+  contact_us: /assets/img/backgrounds/contact_us.jpg
+graphics:
+  about_us: /assets/img/graphics/about_us.jpg
+  contact_us: /assets/img/graphics/contact_us.jpg

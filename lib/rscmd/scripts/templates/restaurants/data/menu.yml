@@ -1,0 +1,40 @@
+title: MENU
+sub_title: 
+set1:
+  - name: SALT & PEPPER PANEER
+    description: Soft fresh paneer cubes deep fried and wok tossed with ginger sea salt crushed black pepper and oriental spice.
+    price: AED 17
+    taste: spicy 
+  - name: CHEESE BEANS ROLLS
+    description: Rolls stuffed with Galangal,lemon grass, beans and cheese served with a Santa j dip.
+    price: AED 13
+    taste: medium spicy
+   - name: CORN CHIN TOWN
+    description: Small corn fritters made with corn, spring onion, Thai chili and battered with tempura flour and deep fried.
+    price: AED 13
+    taste: 
+   - name: SINGAPORE SPINDALE
+    description: Chicken finger spiked with oriental spiced wrapped around with fine noodles and deep fried and served with sweet Thai chilly sauce. 
+    price: AED 15
+    taste: sweet
+set2:
+  - name: CORN CHESTNUT ROLLS
+    description: Rolls stuffed with water chestnut,corn, Thai herbs and deep fried, served with black bean jam.
+    price: AED 13
+    taste: spicy 
+  - name: SINGAPORE SPINDALE PANEER
+    description: Paneer finger spiked with oriental spiced wrapped around with fine noodles and deep fried served with sweet chili Thai sauce.
+    price: AED 13
+    taste: medium spicy
+   - name: SHANGHAI CHICKEN WINGS
+    description: Fried wings wok tossed with Chinese salt & bell pepper.
+    price: AED 14
+    taste: 
+   - name: DRY RED CHILLY HONEY CHICKEN
+    description: Chicken wok tossed with honey, bell pepper and Schezwan pepper.
+    price: AED 15
+    taste: sweet
+   - name: THAI GARLIC PRAWNS
+    description: Stir fry prawns flavored with lemon and garlic.
+    price: AED 15
+    taste: sweet

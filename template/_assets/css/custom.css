@@ -1,0 +1,13 @@
+// Custom CSS goes here
+
+.some_class_name { color: #222 }
+
+// Example for including images in CSS (otherwise, the jekyll-assets plugin won't copy the image to the _site folder and images won't be displayed)
+.with-background {
+	padding: 30px 0; 
+	background-color: #313131; 
+	background-image: url(asset-path("bg/footer_bg_white.png"));
+	background-repeat: repeat-x;
+	background-position: 0px -49px;
+	height: 150px;
+	}
