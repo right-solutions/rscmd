@@ -1,0 +1,7 @@
+<% if @status.blank? %>
+	<%= theme_button('', 'check', admin_testimonials_path(status: :published), remote: false) %>
+	<%= theme_button('', 'archive', admin_testimonials_path(status: :unpublished), remote: false) %>
+	<%= theme_button('', 'trash', admin_testimonials_path(status: :deleted), remote: false) %>
+<% else %>
+	<%= theme_button('All', 'list', admin_testimonials_path, remote: false) %>
+<% end %>

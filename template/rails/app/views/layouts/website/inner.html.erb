@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <!-- Head -->
+  <%= render :partial=>"/layouts/website/head" -%>
+
+</head>
+
+<body class="fonts-3">
+
+  <div id="content-block">
+    <!-- Header -->
+    <%= render :partial=>"/layouts/website/header" -%>
+
+    <!-- Content -->
+    <%= yield %>
+  </div>
+
+  <!-- Footer -->
+  <%= render :partial=>"/layouts/website/footer_inner" -%>
+
+</body>
+</html>

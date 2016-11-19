@@ -1,0 +1,42 @@
+<%
+  edit_link = edit_admin_testimonial_path(@testimonial)
+  delete_link = admin_testimonial_path(@testimonial)
+%>
+
+<div class="panel-footer">
+
+  <div class="dropdown pull-right m-10">
+
+    <button class="btn btn-default btn-xs dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true" style="color:inherit;">
+      <%= raw("<i class=\"fa fa-cogs mr-5\"></i> Action") %>
+      <span class="caret"></span>
+    </button>
+
+    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+
+      <li role="presentation">
+        <%= link_to raw("<i class=\"fa fa-thumb-tack mr-5\"></i> Mark as Published"), 
+                  update_status_admin_testimonial_path(:id =>@testimonial.id, :status =>'published'), 
+                  method: :put, remote: true, role: "menuitem", tabindex: "-1" unless @testimonial.published? %>
+      </li>
+      
+      <li role="presentation">
+        <%= link_to raw("<i class=\"fa fa-check mr-5\"></i> Mark as Unublished"), 
+                  update_status_admin_testimonial_path(:id =>@testimonial.id, :status =>'unpublished'), 
+                  method: :put, remote: true, role: "menuitem", tabindex: "-1" unless @testimonial.unpublished? %>
+      </li>
+
+      <li role="presentation">
+        <%= link_to raw("<i class=\"fa fa-trash mr-5\"></i> Delete"), 
+                  update_status_admin_testimonial_path(:id =>@testimonial.id, :status =>'deleted'), 
+                  method: :put, remote: true, role: "menuitem", tabindex: "-1" unless @testimonial.deleted? %>
+      </li>
+      
+      
+    </ul>
+
+  </div>
+
+  <%= clear_tag %>
+
+</div>

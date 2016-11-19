@@ -1,0 +1,8 @@
+<% if @status.blank? %>
+  <%= theme_button('', 'check-square-o', admin_enquiries_path(status: :read), remote: false) %>
+  <%= theme_button('', 'square-o', admin_enquiries_path(status: :unread), remote: false) %>
+  <%= theme_button('', 'archive', admin_enquiries_path(status: :archived), remote: false) %>
+  <%= theme_button('', 'trash', admin_enquiries_path(status: :deleted), remote: false) %>
+<% else %>
+  <%= theme_button('All', 'list', admin_enquiries_path, remote: false) %>
+<% end %>

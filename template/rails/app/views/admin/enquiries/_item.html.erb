@@ -1,0 +1,19 @@
+<% status_hash = {read: "default", unread: "warning", deleted: "danger", archived: "info"} %>
+
+<div class="panel panel-default media p-5 <%= status_hash[enquiry.status.to_sym] %>" style="margin-bottom:10px;">
+
+  <div class="media-left" style="width:15%;font-size:50px;">
+  	<i class="fa fa-envelope" style="margin-left:10px"></i>
+  </div>
+  <div class="media-body">
+    <%= theme_item_title(enquiry.subject, admin_enquiry_path(enquiry)) %>
+    <span class="mt-5 label label-<%= status_hash[enquiry.status.to_sym] %>"><%= enquiry.status.titleize %></span>
+    
+    <%= theme_item_sub_title(enquiry.name) %>
+    <%= theme_item_description(time_ago_in_words(enquiry.created_at) + " ago") %>
+  </div>
+
+</div>
+
+
+

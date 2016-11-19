@@ -1,0 +1,3 @@
+// Put all your website specific javascripts here
+// This file will be included in main.js during compilation after including the vendor files
+// Check /_assets/js/main.js to know more ...

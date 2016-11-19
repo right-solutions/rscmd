@@ -1,0 +1,70 @@
+<%
+  unless(defined?(heading) && heading)
+    heading = "More Details"
+  end
+  unless(defined?(minimizable) && minimizable)
+    minimizable = false
+  end
+  unless(defined?(closable) && closable)
+    closable = false
+  end
+  unless(defined?(display_footer) && display_footer)
+    display_footer = false
+  end
+  unless(defined?(data_columns) && data_columns)
+    data_columns = data_model.class.column_names.map{|x| x.to_sym}
+  end
+%>
+
+<h4 class="text-color-gray"><%= heading %></h3>
+
+<table class="table table-condensed table-hover table-striped mt-20">
+  <thead>
+    <tr>
+      <th>Sl.</th>
+      <th>Attribute</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <% data_model.class.column_names.each_with_index do |column, index| %>
+      <% next unless data_columns.include?(column.to_sym) %>
+      <% next if (column.include?("token") || column.include?("password")) %>
+      <% if column.include?("_id") %>
+        <% assoc_object = data_model.send(column.gsub("_id", "").to_sym) %>
+        <tr class="text-color-gray">
+          <td><%= index + 1 %>.</td>
+          <td class="bold"><%= column.titleize %></td>
+          <% case assoc_object.class.name %>
+          <% when "Designation" %>
+            <td><%= assoc_object.title %></td>
+          <% when "Department" %>
+            <td><%= assoc_object.name %></td>
+          <% else %>
+            <td><%= assoc_object.class %> not recogonized</td>
+          <% end %>
+        </tr>
+      <% else %>
+        <% value = data_model.send(column) %>
+        <tr class="text-color-gray">
+          <td><%= index + 1 %>.</td>
+          <td class="bold"><%= column.titleize %></td>
+          <% case value.class.to_s %>
+          <% when "Time" %>
+            <td><%= display_time(value) %></td>
+          <% else %>
+            <td><%= value.blank? ? "<not set>" : value %></td>
+          <% end %>
+        </tr>
+      <% end %>
+
+    <% end %>
+
+  </tbody>
+</table>
+
+<% if display_footer %>
+  <%= link_to raw("<i class=\"icon-pencil icon-white mr-5\"></i> Edit"), edit_link, :class=>"btn btn-default btn-xs pull-right ml-10", :remote=>true if defined?(edit_link) && edit_link %>
+  <%= link_to raw("<i class=\"icon-remove \"></i> Delete"), delete_link, method: :delete, data: { confirm: 'Are you sure?' }, :class=>"btn btn-danger btn-xs pull-right", :remote=>true if defined?(delete_link) && delete_link %>
+<% end %>

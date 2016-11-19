@@ -1,0 +1,9 @@
+<% @users.each do |user| %>
+  <div id="div_user_<%= user.id %>">
+    <%= render :partial=>"/admin/users/item", :locals=>{user: user} %>
+  </div>
+<% end %>
+
+<%= theme_panel_message(I18n.translate("forms.no_results")) if @users.blank? %>
+
+<%= theme_paginate(@users) %>

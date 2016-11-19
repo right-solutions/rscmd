@@ -1,0 +1,20 @@
+<table class="table table-striped"> 
+	<thead> 
+		<tr> 
+			<th>#</th> 
+			<th>Email</th> 
+			<th>Date / Time</th>
+		</tr> 
+	</thead>
+	<tbody> 
+		<% @subscriptions.each_with_index do |s, i| %>
+			<tr> 
+				<th scope="row"><%= i %></th>
+				<td><%= s.email %></td> 
+				<td><%= time_ago_in_words(s.created_at) + " ago" %></td> 
+			</tr>
+		<% end %>
+	</tbody> 
+</table>
+
+<%= theme_paginate(@subscriptions) %>

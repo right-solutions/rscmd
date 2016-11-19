@@ -1,0 +1,41 @@
+<%= theme_heading("Manage Users") %>
+
+<div id="div_user_info">
+	<%= render :partial=>"info" %>
+</div>
+
+<div class="row mb-10">
+	<div class="col-sm-6">
+		<%= theme_button('New', 'plus', new_admin_user_path, classes: "pull-left mr-5 mb-5", btn_type: "success") %>
+
+		<div id="div_user_filters">
+			<%= render :partial=>"filters" %>
+		</div>
+		
+	</div>
+	<div class="col-sm-6">
+		<%= theme_search_form(User, admin_users_path) %>
+  </div>
+</div>
+
+<%# Renders a partial to display all the users %>
+<div class="row">
+	<div id="div_user_index" class="col-sm-6 hidden-xs">
+		<%= render :partial=>"index" %>
+	</div>
+	<div id="div_user_drop_down" class="col-xs-12 visible-xs">
+		<%= theme_drop_down(@users, :name) %>
+	</div>
+
+	<div class="col-xs-12 col-sm-6">
+		<div id="div_user_show">
+			<%= theme_detail_box(@users) %>
+		</div>
+		<div id="div_user_details">
+			<%= render :partial=>"details" if @users.any? %>
+		</div>
+	</div>
+
+</div>
+
+

@@ -12,6 +12,7 @@ require "rscmd/scripts/rails"
 require "rscmd/scripts/github"
 require "rscmd/scripts/aws"
 require "rscmd/scripts/optimizer"
+require "rscmd/scripts/io"
 
 module Rscmd
   class Cli < Thor
@@ -70,7 +71,7 @@ module Rscmd
 
       if Dir.exist?(path)
         # Create Rails Project
-        RS::Rails.create(domain, path)
+        Scripts::Rails.create(domain, path)
       else
         puts "Error! Directory #{path} doesn't exist"
       end

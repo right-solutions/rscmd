@@ -1,0 +1,17 @@
+<section class="page_breadcrumbs changeable ls gradient gorizontal_padding section_padding_20 columns_padding_5 table_section">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-6 text-center">
+				<ol class="breadcrumb">
+					<% breadcrumbs.each do |key, bc| %>
+						<% if bc.has_key?(:active) && bc[:active] %>
+							<li class="active"><span><%= bc[:text] %></span></li>
+						<% else %>
+							<li><%= link_to bc[:text], bc[:link] %></li>
+						<% end %>
+					<% end %>
+				</ol>
+			</div>
+		</div>
+	</div>
+</section>

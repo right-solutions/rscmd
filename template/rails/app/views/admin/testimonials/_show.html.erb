@@ -1,0 +1,29 @@
+<%= flash_message if request.xhr? -%>
+
+<div class="panel panel-default">
+  <div class="panel-body" style="height:auto;">
+    <div class="pull-left" style="width:30%;">
+      <%= edit_image(@testimonial, "picture.image.large.url", upload_image_link(@testimonial, :picture)) %>
+    </div>
+    <div class="pull-left ml-10" style="width:65%;">
+      <%= theme_panel_heading(@testimonial.name) %>
+      <%= theme_panel_sub_heading(@testimonial.designation, "#") %>,
+      <%= theme_panel_sub_heading(@testimonial.organisation, "#") %>
+
+      <% status_hash = {published: "success", unpublished: "default", deleted: "danger"} %>
+      <%= clear_tag %>
+      <div class="mt-5 label label-<%= status_hash[@testimonial.status.to_sym] %>">
+        <%= @testimonial.status.titleize %>
+      </div>
+      
+      <br><br><br>
+      <b>Message: </b><%= theme_panel_description(@testimonial.statement, "fs-14 mt-10 text-color-gray") if @testimonial.statement %>
+
+      <br><br><b>Created: </b><%= time_ago_in_words(@testimonial.created_at) %> ago
+    </div>
+
+  </div>
+
+  <%= render partial: "action_buttons" %>
+
+</div>

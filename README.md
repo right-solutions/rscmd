@@ -1,8 +1,10 @@
 # Rscmd
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/rscmd`. To experiment with that code, run `bin/console` for an interactive prompt.
+All commands are basically ruby codes residing in the file `lib/rscmd`. To experiment with that code, run `bin/console` for an interactive prompt. 
 
-TODO: Delete this and the text above, and describe your gem
+Go through the Usage Section for more information about how to use this commands / gem
+
+You will have to install the gem first before you could work with it. Followh the section below to install this gem on your system to start with:
 
 ## Installation
 
@@ -22,10 +24,7 @@ Or install it yourself as:
 
 ## Usage
 
-
-
-
-
+Note: You might want to try bundle exec bin/rscmd instead of just rscmd for the following commands.
 
 ### Create a Jekyll Project
 
@@ -50,9 +49,15 @@ The folder structure is as follows:
 	|-> src # jekyll project files
 	|-> template # the html template if any
 
-Make sure that you do install
+The src folder will be the jekyll root folder
+
+Make sure that you do do bundle install after this command
 
 $ bundle install 
+
+
+
+
 
 
 ### Create a Rails Project
@@ -76,9 +81,15 @@ Examples:
 	|-> src
 	|-> template
 
-Make sure that you do install
+The src folder will be the rails root folder
+
+Make sure that you do do bundle install after this command
 
 $ bundle install 
+
+
+
+
 
 
 ### Create a Github Repository
@@ -108,8 +119,11 @@ Examples:
 
 ```rscmd template <project_name> <dir_path>```
 
-The template command will copy the downloaded template and will add it to the repository  
-according to the right solutions standards. 
+The template command will open up a filebrowser window where you can select the downloaded html template file. It will then copy it to the /template directory in the project folder, add it to the repository but ignoring the content inside.
+
+Since it is adding the template file to the repository, you will have to enter your github username and password.
+
+According to the right solutions standards. 
 
 This command will also do the following
 1) create a directory named 'template' and will copy the template file to it 

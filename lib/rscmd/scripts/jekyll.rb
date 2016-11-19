@@ -4,7 +4,7 @@ module Scripts
 		def self.create_gitignore_file
 			source_dir = File.expand_path('../../../../', __FILE__)
 			# Adding the .gitignore
-			`cp -fr #{source_dir}/template/.gitignore .gitignore`
+			`cp -fr #{source_dir}/template/jekyll/.gitignore .gitignore`
 		end
 
 		def self.cleanup_jekyll_files
@@ -18,51 +18,51 @@ module Scripts
 				`rm -fr feed.xml about.md .gitignore _sass _posts css index.html _includes _layouts`
 
 				puts "Copying the template files to start with"
-				`cp -fr #{source_dir}/template/index.html index.html`
-				`cp -fr #{source_dir}/template/_includes _includes`
-				`cp -fr #{source_dir}/template/_layouts _layouts`
-				`cp -fr #{source_dir}/template/_assets _assets`
+				`cp -fr #{source_dir}/template/jekyll/index.html index.html`
+				`cp -fr #{source_dir}/template/jekyll/_includes _includes`
+				`cp -fr #{source_dir}/template/jekyll/_layouts _layouts`
+				`cp -fr #{source_dir}/template/jekyll/_assets _assets`
 				
 				# Adding the new _config.yml
-				`cp -fr #{source_dir}/template/_config.yml _config.yml`
+				`cp -fr #{source_dir}/template/jekyll/_config.yml _config.yml`
 
 				# Adding the Gemfile
-				`cp -fr #{source_dir}/template/Gemfile Gemfile`
+				`cp -fr #{source_dir}/template/jekyll/Gemfile Gemfile`
 				
 			end
 		end
 
 		def self.create(domain, path)
-	    
-	    puts "Creating a jekyll project in folder structure for #{domain} in #{path}"
 
-	    Dir.chdir(path) do
-	    	# Check if the mentioned directory exist and overide if required
-			  if Dir.exist?(domain)
-			  	puts "Error! Directory #{domain} Exist. Overide? Y / N or Any Key"
-			  	overide = STDIN.gets.chomp
-			  	Kernel.abort("Abort! Directory #{domain} Exist") unless overide.capitalize == "Y"
-		    	FileUtils.rm_rf(domain)
-		    end
+			puts "Creating a jekyll project in folder structure for #{domain} in #{path}"
 
-	    	# Create the Parent Folder for the project
-	    	`mkdir #{domain}`
-	    	Dir.chdir(domain) do
-	    		# Create the folders
-	    		`mkdir template`
-	    		`mkdir releases`
+			Dir.chdir(path) do
+				# Check if the mentioned directory exist and overide if required
+				if Dir.exist?(domain)
+					puts "Error! Directory #{domain} Exist. Overide? Y / N or Any Key"
+					overide = STDIN.gets.chomp
+					Kernel.abort("Abort! Directory #{domain} Exist") unless overide.capitalize == "Y"
+					FileUtils.rm_rf(domain)
+				end
 
-	    		# Create .gitignore file
-	    		create_gitignore_file
+				# Create the Parent Folder for the project
+				`mkdir #{domain}`
+				Dir.chdir(domain) do
+					# Create the folders
+					`mkdir template`
+					`mkdir releases`
 
-	    		# Create the jekyll project
+					# Create .gitignore file
+					create_gitignore_file
+
+					# Create the jekyll project
 					`jekyll new src`
 
 					# Remove unnecessary files created by jekyll
 					cleanup_jekyll_files
-	    	end
+				end
 			end
-	  end
+		end
 
 	  def self.setup_template(name, path, login, password)
 	  	

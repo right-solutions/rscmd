@@ -1,0 +1,10 @@
+<%= content_for :javascript_footer do %>
+  <script type="text/javascript">
+    this.parent.closeModal();
+
+    this.parent.$(".<%= @resource.id %>-poodle-large-image").attr("src", "<%= @image.image.large.url %>");
+    this.parent.$(".<%= @resource.id %>-poodle-medium-image").attr("src", "<%= @image.image.medium.url %>");
+    this.parent.$(".<%= @resource.id %>-poodle-small-image").attr("src", "<%= @image.image.small.url %>");
+    this.parent.$(".<%= @resource.id %>-poodle-tiny-image").attr("src", "<%= @image.image.tiny.url %>");
+  </script>
+<% end %>

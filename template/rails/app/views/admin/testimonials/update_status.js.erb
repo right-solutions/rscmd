@@ -1,0 +1,17 @@
+<% if @testimonial.errors.blank? %>
+
+  // Fill the right box with first item details
+  $('#div_testimonial_details').html("<%= escape_javascript(render(:partial=>"show")) %>");
+
+  // Refresh the updated item in the list
+  $("#div_testimonial_<%= @testimonial.id %>").html("<%= escape_javascript(render :partial => 'item', :locals => { :testimonial => @testimonial }) %>")
+
+  // Close Modal
+  closeModal();
+
+  <% else %>
+  // Populate Server Side Errors
+  errorMessages = <%= @testimonial.errors.full_messages.to_json.html_safe %>;
+  populateServerSideErrors('testimonial', errorMessages);
+
+  <% end %>

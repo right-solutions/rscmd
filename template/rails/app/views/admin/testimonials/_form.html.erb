@@ -1,0 +1,35 @@
+<%= form_for([:admin, @testimonial], :html => {:id=>"form_testimonial", :class=>"mb-0 form-horizontal", :role => "form", :method => (@testimonial.new_record? ? :post : :put), :remote=>true}) do |f| %>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <%= params[:action].titleize %> Model
+    </div>
+    <div class="panel-body" style="height:auto;">
+
+      <div id="testimonial_form_error">
+        <%= @testimonial.errors[:base].to_sentence %>
+      </div>
+
+      <div class="form-inputs mb-30 mt-30">
+
+        <%= theme_form_field(@testimonial, :name) %>
+        <%= theme_form_field(@testimonial, :designation, required: false) %>
+        <%= theme_form_field(@testimonial, :organisation, required: true) %>
+        <%= theme_form_field(@testimonial, :statement, required: true, html_options: {type: :textarea}) %>
+        
+      </div>
+
+    </div>
+
+    <div class="panel-footer clearfix">
+      <div class="pull-right">
+        <% show_url = @testimonial.new_record? ? admin_testimonials_path : admin_testimonial_path(@testimonial) %>
+        <%= link_to "Cancel", show_url, class: "btn btn-default", remote: true %>
+        <%= theme_form_button(@testimonial) %>
+      </div>
+    </div>
+
+  </div>
+
+<% end %>
+

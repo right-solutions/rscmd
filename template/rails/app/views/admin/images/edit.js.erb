@@ -1,0 +1,7 @@
+// Show the new form in the right box.
+heading = "Edit a photo";
+bodyContent = "<%= escape_javascript(render(:partial=>"form")) %>";
+showModal(heading, bodyContent);
+
+// When the image upload form is submitted, the server response will appear in this iframe -->
+var $div = $('<iframe id="iframe_photo" name="iframe_photo" width="100%" style="display:none"></iframe>').appendTo('body');

@@ -1,0 +1,31 @@
+<%= flash_message if request.xhr? -%>
+
+<div class="panel panel-default">
+  <div class="panel-body" style="height:auto;">
+    <div class="pull-left" style="width:30%;">
+      <%= edit_image(@user, "profile_picture.image.large.url", upload_image_link(@user, :profile_picture)) %>
+    </div>
+    <div class="pull-left ml-10" style="width:65%;">
+      <%= theme_panel_heading(@user.name) %>
+      <%= theme_panel_sub_heading(@user.designation, "#") %>
+
+      <%= clear_tag %>
+      <% if @user.super_admin? %>
+        <span class="mr-10 mt-5 label label-warning">Super Admin</span>
+      <% end %>
+      <% status_hash = {active: "primary", inactive: "default", suspended: "danger"} %>
+      <span class="mt-5 label label-<%= status_hash[@user.status.to_sym] %>">
+        <%= @user.status.titleize %> Account
+      </span>
+      <%= clear_tag %>
+      
+    </div>
+    <%= clear_tag %>
+
+    <%#= theme_panel_description(@user.biography, "fs-14 mt-10 text-color-gray") if @user.biography %>
+
+  </div>
+
+  <%= render partial: "action_buttons" %>
+
+</div>

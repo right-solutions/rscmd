@@ -1,0 +1,28 @@
+<ul class="sidebar-nav">
+
+  <%= image_tag("/assets/logo/logo.png", class: "centered mt-20 mb-40", alt: "<Application Name>") %>  
+  
+  <li class="<%= nav_class("admin/dashboard") %>">
+    <%= link_to raw("<i class=\"fa fa-dashboard mr-5\"></i> Dashboard"), main_app.admin_dashboard_url %>
+  </li>
+
+  <li class="<%= nav_class("admin/enquiries") %>">
+    <%= link_to raw("<i class=\"fa fa-envelope mr-5\"></i> Enquiries"), main_app.admin_enquiries_url %>
+  </li>
+
+  <li class="<%= nav_class("admin/subscriptions") %>">
+    <%= link_to raw("<i class=\"fa fa-rss mr-5\"></i> Subscriptions"), main_app.admin_subscriptions_url %>
+  </li>
+
+  <li class="<%= nav_class("admin/testimonials") %>">
+    <%= link_to raw("<i class=\"fa fa-comments mr-5\"></i> Testimonials"), main_app.admin_testimonials_url %>
+  </li>
+
+  <li class="<%= nav_class("admin/users") %>">
+    <%= link_to raw("<i class=\"fa fa-user mr-5\"></i> Manage Users"), main_app.admin_users_url %>
+  </li>
+
+  <li>
+    <%= link_to raw("<i class=\"fa fa-power-off mr-5\"></i> Sign Out"), sign_out_path, :method => :delete %>
+  </li>
+</ul>

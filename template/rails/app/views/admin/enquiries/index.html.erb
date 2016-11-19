@@ -1,0 +1,36 @@
+<%= theme_heading("Manage Enquiries") %>
+
+<div id="div_event_info">
+	<%= render :partial=>"info" %>
+</div>
+
+<div class="row mb-10">
+	<div id="div_event_info" class="col-sm-6">
+		<%= render :partial=>"filters" %>
+	</div>
+	<div class="col-sm-6">
+		<%= theme_search_form(Enquiry, admin_enquiries_path) %>
+  </div>
+</div>
+
+<%# Renders a partial to display all the enquiries %>
+<div class="row">
+	<div id="div_enquiry_index" class="col-sm-6 hidden-xs">
+		<%= render :partial=>"index" %>
+	</div>
+	<div id="div_enquiry_drop_down" class="col-xs-12 visible-xs">
+		<%= theme_drop_down(@enquiries, :name, text: "Click to view Enquiries") %>
+	</div>
+
+	<div class="col-xs-12 col-sm-6">
+		<div id="div_enquiry_show">
+			<%= theme_detail_box(@enquiries) %>
+		</div>
+		<div id="div_enquiry_details">
+			<%= render :partial=>"details" if @enquiries.any? %>
+		</div>
+	</div>
+
+</div>
+
+

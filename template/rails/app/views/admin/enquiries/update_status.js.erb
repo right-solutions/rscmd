@@ -1,0 +1,17 @@
+<% if @enquiry.errors.blank? %>
+
+  // Fill the right box with first item details
+  $('#div_enquiry_details').html("<%= escape_javascript(render(:partial=>"show")) %>");
+
+  // Refresh the updated item in the list
+  $("#div_enquiry_<%= @enquiry.id %>").html("<%= escape_javascript(render :partial => 'item', :locals => { :enquiry => @enquiry }) %>")
+
+  // Close Modal
+  closeModal();
+
+  <% else %>
+  // Populate Server Side Errors
+  errorMessages = <%= @enquiry.errors.full_messages.to_json.html_safe %>;
+  populateServerSideErrors('enquiry', errorMessages);
+
+  <% end %>

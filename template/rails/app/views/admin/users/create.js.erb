@@ -1,0 +1,19 @@
+<% if @user.errors.blank? %>
+  // Fill the right box with first user details
+  $('#div_user_show').html("<%= escape_javascript(render(:partial=>'show')) %>");
+  $('#div_user_details').html("<%= escape_javascript(render(:partial=>'details')) %>");
+
+  // Add the newly created item to the list
+  $("#div_user_index").prepend("<div id=\"div_user_<%= @user.id %>\"><%= escape_javascript(render(:partial => 'item', :locals => { :user => @user })) %></div>")
+  $(".panel-message").hide();
+<% else %>
+  $('#div_user_show').html("<%= escape_javascript(render(:partial=>'form')) %>");
+  validateUserForm();
+
+  // Populate Server Side Errors
+  <%
+    text = "You have few errors. They have been highlighted."
+    error_message = content_tag(:div, text, class: "alert alert-danger")
+  %>
+  $("#user_form_error").html("<%= escape_javascript(error_message) %>");
+<% end %>

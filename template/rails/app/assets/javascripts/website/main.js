@@ -1,0 +1,1 @@
+// Replace this file with the main javascript for the website template

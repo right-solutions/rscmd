@@ -1,0 +1,18 @@
+<% if @filters.has_key?(:status) %>
+	<div class="alert alert-warning alert-dismissible" role="alert">
+		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		<% if @filters.has_key?(:status) %>
+			<p>Displaying <b><%= @filters[:status].titleize %></b> Testimonials</p>
+		<% end %>
+	</div>
+<% end %>
+
+<% @testimonials.each do |testimonial| %>
+  <div id="div_testimonial_<%= testimonial.id %>">
+    <%= render :partial=>"/admin/testimonials/item", :locals=>{testimonial: testimonial} %>
+  </div>
+<% end %>
+
+<%= theme_panel_message(I18n.translate("forms.no_results")) if @testimonials.blank? %>
+
+<%= theme_paginate(@testimonials) %>

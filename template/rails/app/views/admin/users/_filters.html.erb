@@ -1,0 +1,7 @@
+<% if @status.blank? %>
+	<%= theme_button('', 'toggle-on', admin_users_path(status: :active), remote: false) %>
+	<%= theme_button('', 'toggle-off', admin_users_path(status: :inactive), remote: false) %>
+	<%= theme_button('', 'ban', admin_users_path(status: :suspended), remote: false) %>
+<% else %>
+	<%= theme_button('All', 'list', admin_users_path, remote: false) %>
+<% end %>

@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col-xs-4">
+    <%= link_to raw("<i class='fa fa-plus mr-10'></i> New User"), new_admin_user_path, :class=>"btn btn-primary", :remote=>true %>
+  </div><!-- /.col-xs-6 -->
+
+  <div class="col-xs-8">
+
+    <%= form_for User.new, :url => admin_users_path, :method => :get, :remote=>true, :html=>{:class=>"pull-right", :style=>"margin-bottom:0px;"} do |f| %>
+
+    <div class="input-group">
+      <input type="text" name="query" placeholder="Search Users ..." class="form-control">
+      <span class="input-group-btn">
+        <button type="submit" class="btn btn-default"><i class='fa fa-search mr-10'></i>Search!</button>
+      </span>
+    </div><!-- /input-group -->
+
+      <%= label_tag :status, "Filter by status", :for => "status", :class=>"pull-left mr-10" %>
+        <% options = ConfigCenter::User::STATUS_LIST %>
+        <%= select_tag("status", options_for_select(options, params[:status] ), :class=>"form-control pull-left filter-select", "data-filter-type" => "status", :prompt => "All") %>
+
+        <%= label_tag :type, "Filter by type", :for => "user_type", :class=>"pull-left mr-10" %>
+        <% options = ["user", "admin", "super_admin"] %>
+        <%= select_tag("user_type", options_for_select(options, params[:user_type] ), :class=>"form-control pull-left filter-select", "data-filter-type" => "user_type", :prompt => "All") %>
+
+      <div class="col-xs-8">
+      <span class="input-group-btn">
+        <button type="submit" class="btn btn-default"><i class='fa fa-search mr-10'></i>Filter!</button>
+      </span>
+      </div>
+    <%- end %>
+
+  </div><!-- /.col-xs-6 -->
+</div><!-- /.row -->
+
+

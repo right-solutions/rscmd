@@ -1,0 +1,25 @@
+<% 
+  user_color = user.super_admin? ? "warning" : "default"
+  status_hash = {active: "success", inactive: "default", suspended: "danger"} 
+%>
+
+<div class="panel panel-default media p-5 <%= user_color %>" style="margin-bottom:10px;">
+
+  <a class="media-left" href="#" style="width:25%;">
+  <%= display_image(user, "profile_picture.image.small.url", size: "small") %>
+  </a>
+  <div class="media-body">
+    <%= theme_item_title(user.name, admin_user_path(user)) %>
+    
+    <span class="ml-5 mt-5 label label-<%= status_hash[user.status.to_sym] %>"><%= user.status.titleize %></span>
+    <%= clear_tag %>
+    
+    <%= theme_item_sub_title("#{user.designation}") %>
+    <%= clear_tag(10) %>
+    <%= theme_item_description("#{user.email}") %>
+  </div>
+
+</div>
+
+
+
